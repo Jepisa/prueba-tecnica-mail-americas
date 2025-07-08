@@ -53,3 +53,9 @@ collect([1, 2, 3, 4])
 ## 3. (Opcional) Mejora de rendimiento en Laravel
 
 ¿Qué harías para mejorar el rendimiento de un sistema Laravel con muchas consultas a base de datos? Una breve lista con 3 o más ideas concretas.
+
+---
+
+## 📋 Respuestas
+
+Las respuestas a esta prueba técnica se encuentran en: [RESPUESTAS.md](RESPUESTAS.md)
