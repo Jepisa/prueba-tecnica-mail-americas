@@ -88,7 +88,7 @@ collect([1, 2, 3, 4])
 
 ## 3. Mejoras de Rendimiento en Laravel
 
-Para mejorar el rendimiento de un sistema Laravel con muchas consultas a base de datos, revisaría cómo se construyó la base de datos (migraciones o directo en la misma DB), pasaría por los models para ver relaciones con otras tablas y lugares donde se estén realizando las consultas. Todos esto también lo estaría debugueando, por ejemplo con Debugbar. 
+Para mejorar el rendimiento de un sistema Laravel con muchas consultas a base de datos, revisaría cómo se construyó la base de datos (migraciones o directo en la misma DB), pasaría por los models para ver relaciones con otras tablas y lugares donde se estén realizando las consultas. Todo esto también lo estaría debugueando, por ejemplo con Debugbar. 
 
 Estas son algunas de las mejoras que suelo implementar:
 
