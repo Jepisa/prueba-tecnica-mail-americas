@@ -88,7 +88,9 @@ collect([1, 2, 3, 4])
 
 ## 3. Mejoras de Rendimiento en Laravel
 
-Para mejorar el rendimiento de un sistema Laravel con muchas consultas a base de datos:
+Para mejorar el rendimiento de un sistema Laravel con muchas consultas a base de datos, revisaría cómo se construyó la base de datos (migraciones o directo en la misma DB), pasaría por los models para ver relaciones con otras tablas y lugares donde se estén realizando las consultas. Todos esto también lo estaría debugueando, por ejemplo con Debugbar. 
+
+Estas son algunas de las mejoras que suelo implementar:
 
 1. **Eager Loading** - Usar `with()` para cargar relaciones y evitar el problema N+1:
    ```php
@@ -111,7 +113,7 @@ Para mejorar el rendimiento de un sistema Laravel con muchas consultas a base de
 
 4. **Procesamiento en Lotes** - chunkById()
    ```php
-    User::select('id', 'name')
+    User::select('id', 'name', 'email')
         ->where('active', true)
         ->orderBy('id')
         ->chunkById(100, function ($usersChunk) {
@@ -124,7 +126,7 @@ Para mejorar el rendimiento de un sistema Laravel con muchas consultas a base de
 5. **Query Optimization** - Traer solo columnas necesarias:
    ```php
         $users = User::select('id', 'name', 'email')
-        ->where('verified', true)
+        ->where('active', true)
         ->with(['tasks' => function ($query) {
             $query->select('id', 'user_id', 'title', 'status')
                 ->where('status', 'pending');
